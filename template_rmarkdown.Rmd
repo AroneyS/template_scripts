@@ -1,0 +1,75 @@
+---
+title: "Document title"
+author: "Samuel Aroney"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  bookdown::pdf_document2:
+    toc: FALSE
+  bookdown::html_document2: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  error = FALSE,
+  fig.width = 6,
+  fig.asp = 0.618,
+  out.width = "100%",
+  fig.align = "center")
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
+
+library(cowplot)
+library(tidyverse)
+library(here)
+```
+
+```{r wrangling}
+
+```
+
+## First analysis
+```{r first-analysis}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

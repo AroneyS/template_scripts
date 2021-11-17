@@ -1,0 +1,15 @@
+test/
+results/
+data/
+*chunking/
+
+.Rhistory
+.Rproj.user/
+*.Rproj
+
+.snakemake/
+
+*.html
+*.pdf
+*.xlsx
+
