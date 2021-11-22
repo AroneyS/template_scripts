@@ -19,13 +19,15 @@ knitr::opts_chunk$set(
   out.width = "100%",
   fig.align = "center")
 
-colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
-habitat_levels <- c("palsa", "bog", "fen")
-colour_habitat <- c("#703C1B", "#058000", "#0001FF")
-
 library(cowplot)
 library(tidyverse)
 library(here)
+
+output_dir <- here("results", "document_name_rmd", "2021")
+
+colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
+habitat_levels <- c("palsa", "bog", "fen")
+colour_habitat <- c("#703C1B", "#058000", "#0001FF")
 ```
 
 ```{r wrangling}
