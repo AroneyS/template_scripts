@@ -24,6 +24,7 @@ library(tidyverse)
 library(here)
 
 output_dir <- here("results", "document_name_rmd", "2021")
+dir.create(output_dir, recursive = TRUE)
 
 colour_brewer <- setNames(append(as.list(RColorBrewer::brewer.pal(12, "Paired")), c("#737373", "#FFFFFF", "#000000")), c("blue", "darkblue", "green", "darkgreen", "red", "darkred", "orange", "darkorange", "purple", "darkpurple", "yellow", "brown", "grey", "white", "black"))
 habitat_levels <- c("palsa", "bog", "fen")
