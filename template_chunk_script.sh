@@ -5,6 +5,7 @@ BASENAME=$(echo $0 | sed "s=.*/==" | sed "s/\.sh//")
 CPUS=1
 MEMORY=4
 NCHUNKS=50
+HOURS=168
 
 while getopts 'i:o:c:m:n:s:t:' flag; do
   case "${flag}" in
