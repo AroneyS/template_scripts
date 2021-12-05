@@ -1,6 +1,6 @@
 #!/bin/bash
-# envionment: 
 
+ENVIRONMENT=
 BASENAME=$(echo $0 | sed "s=.*/==" | sed "s/\.sh//")
 CPUS=1
 MEMORY=4
@@ -24,6 +24,8 @@ done
 BASENAME=${BASENAME}$SUFFIX
 COMMAND_FILE=${BASENAME}_commands
 mkdir -p $OUTPUT_DIR/logs
+
+conda activate $ENVIRONMENT
 
 cat $INPUT_FILE_LIST | parallel --dryrun \
   run_something \
