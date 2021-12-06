@@ -25,6 +25,7 @@ BASENAME=${BASENAME}$SUFFIX
 COMMAND_FILE=${BASENAME}_commands
 mkdir -p $OUTPUT_DIR/logs
 
+source $(conda info --base)/etc/profile.d/conda.sh
 conda activate $ENVIRONMENT
 
 cat $INPUT_FILE_LIST | parallel --dryrun \
