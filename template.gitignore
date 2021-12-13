@@ -3,6 +3,7 @@ results/
 data/
 *chunking/
 
+.vscode/
 .Rhistory
 .Rproj.user/
 *.Rproj
