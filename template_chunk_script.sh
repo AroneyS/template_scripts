@@ -34,4 +34,4 @@ cat $INPUT_FILE_LIST | parallel --dryrun \
 mqsub --name $BASENAME --command-file $COMMAND_FILE --chunk-num $NCHUNKS --mem $MEMORY --cpus $CPUS --hours $HOURS \
   &> $OUTPUT_DIR/logs/${BASENAME}.log
 
-# find ./ -name "${BASENAME}*e*" | parallel cat
+# find ./ -maxdepth 1 -name "${BASENAME}*e*" | parallel cat
