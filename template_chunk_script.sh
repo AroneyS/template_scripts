@@ -22,8 +22,8 @@ while getopts 'i:o:c:m:n:s:t:' flag; do
 done
 
 BASENAME=${BASENAME}$SUFFIX
-COMMAND_FILE=${BASENAME}_commands
 mkdir -p $OUTPUT_DIR/logs
+COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_complete
 
 cat $INPUT_FILE_LIST | parallel --dryrun \
   run_something \
