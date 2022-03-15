@@ -23,7 +23,7 @@ done
 
 BASENAME=${BASENAME}$SUFFIX
 mkdir -p $OUTPUT_DIR/logs
-COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_complete
+COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_commands
 
 cat $INPUT_FILE_LIST | parallel --dryrun \
   run_something \
