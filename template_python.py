@@ -16,7 +16,7 @@ def main(arguments):
     parser.add_argument('--debug', help='output debug information', action="store_true")
     parser.add_argument('--quiet', help='only output errors', action="store_true")
 
-    parser.add_argument("--input", type=argparse.FileType("r"), metavar="<INPUT>", help="Input file")
+    parser.add_argument("--input", type=argparse.FileType("r"), help="Input file")
     parser.add_argument("-o", "--outfile", type=argparse.FileType("w"), default=sys.stdout, help="Output file")
 
     args = parser.parse_args(arguments)
