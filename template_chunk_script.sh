@@ -25,7 +25,7 @@ BASENAME=${BASENAME}$SUFFIX
 mkdir -p $OUTPUT_DIR/logs
 COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_commands
 
-cat $INPUT_FILE_LIST | parallel --dryrun \
+cat $INPUT_FILE_LIST | parallel --dryrun --plus \
   run_something \
     -output $OUTPUT_DIR/{/.} \
   '&>' $OUTPUT_DIR/logs/{/.}.log \
