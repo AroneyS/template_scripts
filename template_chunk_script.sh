@@ -1,5 +1,7 @@
 #!/bin/bash
-#environment: 
+
+source $(conda info --base)/etc/profile.d/conda.sh
+conda activate base
 
 BASENAME=$(echo $0 | sed "s=.*/==" | sed "s/\.sh//")
 CPUS=1
