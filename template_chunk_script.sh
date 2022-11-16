@@ -5,7 +5,7 @@ conda activate base
 
 BASENAME=$(echo $0 | sed "s=.*/==" | sed "s/\.sh//")
 CPUS=1
-MEMORY=4
+MEMORY=8
 NCHUNKS=1
 HOURS=168
 QUEUE=microbiome
@@ -29,7 +29,7 @@ BASENAME=${BASENAME}$SUFFIX
 mkdir -p $OUTPUT_DIR/logs
 COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_commands
 
-cat $INPUT_FILE_LIST | parallel --dryrun --plus \
+cat $INPUT_FILE_LIST | parallel --dryrun --plus --col-sep "\t" \
   run_something \
     -output $OUTPUT_DIR/{/.} \
   '&>' $OUTPUT_DIR/logs/{/.}.log \
