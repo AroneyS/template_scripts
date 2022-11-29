@@ -32,10 +32,19 @@ colour_habitat <- c("#703C1B", "#058000", "#0001FF")
 ```
 
 ```{r wrangling}
-
+data <- tibble(tibble())
 ```
 
-## First analysis
-```{r first-analysis}
+## Analysis
+```{r analysis-function}
+analysis_function <- function(data) {
+  # Analysis code
+}
+```
 
+```{r analysis}
+output_subdir <- here(output_dir, "analysis")
+dir.create(output_subdir, recursive = TRUE)
+
+data %>% map(analysis_function)
 ```
