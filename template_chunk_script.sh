@@ -39,7 +39,7 @@ cat $INPUT_FILE_LIST | parallel --dryrun --plus --col-sep "\t" \
 
 if [ -z "$SUBMIT" ]
 then
-  echo "Run commands in $COMMAND_FILE"
+  echo "Run commands using `parallel -j64 :::: $COMMAND_FILE`"
 else
   mqsub -q $QUEUE --name $BASENAME --command-file $COMMAND_FILE --chunk-num $NCHUNKS --mem $MEMORY --cpus $CPUS --hours $HOURS \
     &> $OUTPUT_DIR/logs/${BASENAME}.log
