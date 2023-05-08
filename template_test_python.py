@@ -18,7 +18,7 @@ class Tests(unittest.TestCase):
     def assertDataFrameEqual(self, a, b):
         assert_frame_equal(a, b, check_dtype=False, check_row_order=False)
 
-    def test_generate_community(self):
+    def test_template_python(self):
         input = pl.DataFrame([
             ["genome1"],
         ], schema=INPUT_COLUMNS)
