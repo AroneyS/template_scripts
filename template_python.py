@@ -5,7 +5,6 @@ Author: Samuel Aroney
 Description
 """
 
-import os
 import sys
 import argparse
 import logging
@@ -17,7 +16,7 @@ def main(arguments):
     parser.add_argument("--quiet", help="only output errors", action="store_true")
 
     parser.add_argument("--input", type=argparse.FileType("r"), help="Input file")
-    parser.add_argument("-o", "--outfile", type=argparse.FileType("w"), default=sys.stdout, help="Output file")
+    parser.add_argument("--output", type=argparse.FileType("w"), default=sys.stdout, help="Output file")
 
     args = parser.parse_args(arguments)
 
