@@ -33,8 +33,9 @@ COMMAND_FILE=$OUTPUT_DIR/logs/${BASENAME}_commands.sh
 
 cat $INPUT_FILE_LIST | parallel --dryrun --plus --col-sep "\t" \
   run_something \
-    -output $OUTPUT_DIR/{/.} \
-  '&>' $OUTPUT_DIR/logs/{/.}.log \
+    --input '$(eval echo {1})' \
+    --output $OUTPUT_DIR/{2/.} \
+  '&>' $OUTPUT_DIR/logs/{2/.}.log \
   > $COMMAND_FILE
 
 if [ -z "$SUBMIT" ]
