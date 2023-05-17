@@ -1,7 +1,8 @@
 #!/bin/bash
 
+CONDA_ENV=base
 source $(conda info --base)/etc/profile.d/conda.sh
-conda activate base
+conda activate $CONDA_ENV
 
 BASENAME=$(echo $0 | sed "s=.*/==" | sed "s/\.sh//")
 CPUS=1
@@ -40,7 +41,7 @@ cat $INPUT_FILE_LIST | parallel --dryrun --plus --col-sep "\t" \
 
 if [ -z "$SUBMIT" ]
 then
-  echo "Run commands using parallel -j64 :::: $COMMAND_FILE"
+  echo "Run commands in $CONDA_ENV using parallel -j64 :::: $COMMAND_FILE"
 else
   mqsub -q $QUEUE --name $BASENAME --command-file $COMMAND_FILE --chunk-num $NCHUNKS --mem $MEMORY --cpus $CPUS --hours $HOURS \
     &> $OUTPUT_DIR/logs/${BASENAME}.log
