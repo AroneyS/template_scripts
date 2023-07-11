@@ -39,6 +39,8 @@ cat $INPUT_FILE_LIST | parallel --dryrun --plus --col-sep "\t" \
   '&>' $OUTPUT_DIR/logs/{2/.}.log \
   > $COMMAND_FILE
 
+chmod +x $COMMAND_FILE
+
 if [ -z "$SUBMIT" ]
 then
   echo "Run commands in $CONDA_ENV using parallel -j64 :::: $COMMAND_FILE"
